@@ -22,7 +22,7 @@ module.exports = function make(options, callback) {
         const path = font.getPath(item, xPos(), 100 * (index + 1), 100);
         return path.toSVG();
       })
-      .join("");
+      .join('');
     const svg = [
       '<?xml version="1.0"?><svg',
       'xmlns="http://www.w3.org/2000/svg'`,
@@ -30,7 +30,7 @@ module.exports = function make(options, callback) {
       `fill="${options.color || "white"}" width="${maxWidth}" height="${
         textArray.length * 110
       }"><g>${result}</g></svg>`,
-    ].join("");
+    ].join('');
     return callback(err, svg);
   });
 };
