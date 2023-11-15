@@ -30,7 +30,7 @@ module.exports = function make(options, callback) {
       `fill="${options.color || "white"}" width="${maxWidth}" height="${
         textArray.length * 110
       }"><g>${result}</g></svg>`,
-    ].join("");
-    return callback(err, svg);
+    ].join(" ");
+    callback(err, svg);
   });
 };
