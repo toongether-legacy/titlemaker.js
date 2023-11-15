@@ -1,6 +1,6 @@
 {
   "name": "titlemaker.js",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "description": "Easy Text-to-SVG tool for any Comic Thumbnails.",
   "main": "./src/main.js",
   "scripts": {
