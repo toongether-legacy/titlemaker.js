@@ -1,8 +1,9 @@
 const opentype = require("opentype.js");
 const wrap = require("word-wrapper");
 
-module.exports = function make(options, callback) {
-  opentype.load(`./fonts/${options.font}.otf`, (err, font) => {
+exports.make = function (options, callback) {
+  const path = `titlemaker.js/fonts/${options.font || "GangwonEduPower"}.otf`;
+  opentype.load(require.resolve(path), (err, font) => {
     const wrapText = (text, width) => {
       const wrappedText = wrap(text, { width: width }).split("\n");
       if (wrappedText.length > 3) return wrapText(text, width + 1);
@@ -25,8 +26,8 @@ module.exports = function make(options, callback) {
       .join("");
     const svg = [
       '<?xml version="1.0"?><svg',
-      'xmlns="http://www.w3.org/2000/svg'`,
-        'xmlns:xlink="http://www.w3.org/1999/xlink'`,
+      'xmlns="http://www.w3.org/2000/svg"',
+      'xmlns:xlink="http://www.w3.org/1999/xlink"',
       `fill="${options.color || "white"}" width="${maxWidth}" height="${
         textArray.length * 110
       }"><g>${result}</g></svg>`,
